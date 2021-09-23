@@ -1,0 +1,6 @@
+SELECT ct.CUST_NAME,ct.CUST_COUNTRY,ct.PHONE_NO,od.ORD_AMOUNT,od.ORD_DATE,com.COMPANY_NAME
+FROM orders od
+LEFT JOIN customer ct on ct.CUST_CODE = od.CUST_CODE
+LEFT JOIN agents ag on ag.AGENT_CODE = od.AGENT_CODE
+LEFT JOIN company com on ag.COMPANY_ID = com.COMPANY_ID  
+ORDER BY `od`.`ORD_DATE`  DESC
